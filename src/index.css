@@ -25,7 +25,7 @@ small {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #f1d4b3;
   overflow: hidden;
   color: #292218;
@@ -73,7 +73,7 @@ header {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   background-color: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-color: red orange;
   scrollbar-width: thin;
   position: relative;

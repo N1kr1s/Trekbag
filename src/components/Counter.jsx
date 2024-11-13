@@ -1,7 +1,8 @@
-function Counter() {
+function Counter({ handleItemsPackedCount }) {
+  const [itemsPackedCount, totalItems] = handleItemsPackedCount()
   return (
     <p>
-      <b>1</b>/3 items packed
+      <b>{itemsPackedCount}</b>/{totalItems} items packed
     </p>
   )
 }
