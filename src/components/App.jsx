@@ -3,11 +3,18 @@ import BackgroundHeading from './BackgroundHeading'
 import Header from './Header'
 import ItemList from './ItemList'
 import Sidebar from './Sidebar'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { initialItems } from '../lib/constants'
 
 function App() {
-  const [items, setItems] = useState(initialItems)
+  const [items, setItems] = useState(() => {
+    const storedItems = localStorage.getItem('items')
+    return storedItems ? JSON.parse(storedItems) : initialItems
+  })
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items])
 
   const handleAddItem = (newItemText) => {
     const newItem = {
