@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react'
 import Button from './Button'
+import { useItemsContext } from '../lib/hook'
 
-function AddItemForm({ onAddItem }) {
+function AddItemForm() {
+  const { handleAddItem: onAddItem } = useItemsContext()
   const [itemText, setItemText] = useState('')
   const inputRef = useRef(null)
 
