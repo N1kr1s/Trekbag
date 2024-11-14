@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react'
 import Button from './Button'
-import { useItemsContext } from '../lib/hook'
+import { useItemsStore } from '../stores/itemsStore'
 
 function AddItemForm() {
-  const { handleAddItem: onAddItem } = useItemsContext()
+  const onAddItem = useItemsStore((state) => state.addItem)
   const [itemText, setItemText] = useState('')
   const inputRef = useRef(null)
 
